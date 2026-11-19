@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#19333b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="封闭营任务">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <title>封闭营 · 每日任务</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>.toast.show{opacity:1!important;transform:translate(-50%,0)}</style>
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">CLOSED CAMP · DAILY DESK</p>
+        <h1>每日任务清单</h1>
+        <p class="subtitle">把今天的事情，一项一项稳稳完成。</p>
+      </div>
+      <div class="clock-card">
+        <div id="liveTime">--:--:--</div>
+        <div id="liveDate">正在读取电脑时间</div>
+      </div>
+    </header>
+
+    <section class="toolbar">
+      <div class="date-nav">
+        <button class="icon-btn" id="prevDay" title="前一天">‹</button>
+        <input type="date" id="datePicker">
+        <button class="icon-btn" id="nextDay" title="后一天">›</button>
+        <button class="today-btn" id="todayBtn">回到今天</button>
+      </div>
+      <button class="holiday-btn" id="holidayBtn">☀ 今天放假 · 全部打勾</button>
+    </section>
+
+    <section class="summary-card">
+      <div class="summary-top"><span id="summaryText">0 / 0 已完成</span><span id="percentText">0%</span></div>
+      <div class="progress"><div id="progressBar"></div></div>
+    </section>
+
+    <section class="notification-card">
+      <div class="notice-copy">
+        <span class="bell">♢</span>
+        <div><strong>定时提醒</strong><p id="notifyStatus">开启后，在任务时间前提醒你。</p></div>
+      </div>
+      <div class="notice-actions">
+        <label>提前 <select id="leadMinutes"><option value="10">10</option><option value="15">15</option></select> 分钟</label>
+        <button class="outline-btn" id="enableNotify">开启提醒</button>
+      </div>
+    </section>
+
+    <section class="install-card" id="installCard">
+      <div><strong>安装到 iPhone 主屏幕</strong><p>在 Safari 点“分享”→“添加到主屏幕”，打开后更像独立 App，也支持离线查看。</p></div>
+      <button class="outline-btn" id="installTip">查看方法</button>
+    </section>
+
+    <section class="task-section">
+      <div class="section-heading"><h2>今日安排</h2><span id="taskCount"></span></div>
+      <div id="timedTasks" class="task-list"></div>
+    </section>
+    <section class="task-section anytime-section">
+      <div class="section-heading"><h2>全天任务</h2><span>完成后随手勾选</span></div>
+      <div id="anytimeTasks" class="task-list"></div>
+    </section>
+
+    <footer><span>任务来源：封闭营任务.txt</span><span>数据仅保存在本机浏览器</span></footer>
+  </main>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

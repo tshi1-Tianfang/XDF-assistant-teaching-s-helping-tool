@@ -1,0 +1,12 @@
+{
+  "name": "封闭营每日任务",
+  "short_name": "封闭营任务",
+  "description": "封闭营助教每日任务清单",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f8f6",
+  "theme_color": "#19333b",
+  "lang": "zh-CN",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
